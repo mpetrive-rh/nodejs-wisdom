@@ -5,12 +5,18 @@ const routes = [
   {
     method: 'GET',
     url: '/api/cars',
-    handler: carController.getCars
+    handler: carController.getCars,
+    schema: {
+      description: "Get cars endpoint"
+    }
   },
   {
     method: 'GET',
     url: '/api/cars/:id',
-    handler: carController.getSingleCar
+    handler: carController.getSingleCar,
+    schema: {
+      description: "Get cars by id endpoint"
+    }
   },
   {
     method: 'POST',
@@ -31,4 +37,3 @@ const routes = [
 ]
 
 module.exports = routes
-

@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "/usr/local/lib/npm/lib/node_modules/nodemon/bin/nodemon.js ./src/index.js",
+    "start": "NODE_PATH=/usr/local/lib/npm/lib/node_modules /usr/local/lib/npm/lib/node_modules/nodemon/bin/nodemon.js ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "config": "^3.0.0"
+  }
 }
