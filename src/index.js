@@ -1,5 +1,15 @@
+#!/usr/bin/env node
+
+const homedir = require('os').homedir()
+console.log(homedir)
+
 var appConfig;
-appConfig = require('./config/app')
+try {
+  appConfig = require(homedir+'/nodejs-config/appConfig')
+} catch(err) {
+  appConfig = require('./config/app')
+}
+
 console.log(appConfig)
 
 // Require the framework and instantiate it
