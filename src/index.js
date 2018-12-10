@@ -18,9 +18,15 @@ const fastify = require('fastify')({
 })
 
 // Import Swagger Options
-const swagger = require('./config/swagger')
+var swaggerConfig;
+try {
+  swaggerConfig = require(homedir+'/nodejs-config/swagger')
+} catch(err) {
+  swaggerConfig = require('./config/swagger')
+}
+
 // Register Swagger
-fastify.register(require('fastify-swagger'), swagger.options)
+fastify.register(require('fastify-swagger'), swaggerConfig.options)
 
 const routes = require('./routes')
 
@@ -37,7 +43,7 @@ mongoose.connect('mongodb://'+appConfig.options.dbHost+'/mycargarage')
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
-  return { hello: 'world' }
+  return { payload: 'Hello World' }
 })
 
 // Run the server!
