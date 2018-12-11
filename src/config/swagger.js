@@ -11,7 +11,7 @@ exports.options = {
       url: 'https://swagger.io',
       description: 'Find more info here'
     },
-    host: '192.168.1.100',
+    host: 'localhost',
     schemes: ['http'],
     consumes: ['application/json'],
     produces: ['application/json']
