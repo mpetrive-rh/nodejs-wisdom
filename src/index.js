@@ -49,7 +49,7 @@ fastify.get('/', async (request, reply) => {
 // Run the server!
 const start = async () => {
   try {
-    await fastify.listen(appConfig.options.nodeListenPort, appConfig.options.nodeListenAddr)
+    await fastify.listen(3000, appConfig.options.nodeListenAddr)
     fastify.swagger()
     fastify.log.info(`server listening on ${fastify.server.address().port}`)
   } catch (err) {
