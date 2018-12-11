@@ -1,4 +1,5 @@
 exports.options = {
   dbHost: 'localhost',
-  nodeListenAddr: 'localhost'
+  nodeListenAddr: 'localhost',
+  nodeListenPort: 3000
 }
