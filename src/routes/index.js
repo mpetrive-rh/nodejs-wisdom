@@ -1,12 +1,14 @@
 // Import our Controllers
 const carController = require('../controllers/carController')
+const Car = require('../models/MCar')
 
 const routes = [
   {
     method: 'GET',
     url: '/api/cars',
     handler: carController.getCars,
-    schema: {
+    schema:
+    {
       description: "Get cars endpoint"
     }
   },
@@ -21,8 +23,20 @@ const routes = [
   {
     method: 'POST',
     url: '/api/cars',
-    handler: carController.addCar
-    //schema: documentation.addCarSchema
+    handler: carController.addCar,
+    schema: {
+      body: {
+          type: 'object',
+          properties: {
+            title: { type: 'string' },
+            brand: { type: 'string' },
+            price: { type: 'integer' },
+            age: { type: 'integer'},
+            services: { type: 'object'},
+          },
+          required: [ 'title' ]
+      }
+    }
   },
   {
     method: 'PUT',
@@ -32,7 +46,15 @@ const routes = [
   {
     method: 'DELETE',
     url: '/api/cars/:id',
-    handler: carController.deleteCar
+    handler: carController.deleteCar,
+    schema: {
+      params: {
+          type: 'object',
+          properties: {
+            id: { type: 'string' }
+          },
+      }
+    }
   }
 ]
 

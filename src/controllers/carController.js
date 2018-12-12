@@ -2,7 +2,7 @@
 const boom = require('boom')
 
 // Get Data Models
-const Car = require('../models/Car')
+const Car = require('../models/MCar')
 
 // Get all cars
 exports.getCars = async (req, reply) => {
@@ -58,4 +58,3 @@ exports.deleteCar = async (req, reply) => {
     throw boom.boomify(err)
   }
 }
-

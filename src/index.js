@@ -43,7 +43,7 @@ mongoose.connect('mongodb://'+appConfig.options.dbHost+'/mycargarage')
 
 // Declare a route
 fastify.get('/', async (request, reply) => {
-  return { payload: 'Hello World' }
+  return { payload: 'root end point' }
 })
 
 // Run the server!
